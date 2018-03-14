@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="./assets/ol/ol.css">
   <link rel="stylesheet" href="./src/css/app.css">
 </head>
+
 <body>
   <div id="spinner-container">
     <div class="spinner">
@@ -18,13 +20,13 @@
     </div>
   </div>
   <div id="map">
-    <div id ="maptitle">Dieselgate en Europe – les taux de mortalité au niveau local</div>
+    <div id="maptitle">Dieselgate en Europe – les taux de mortalité au niveau local</div>
     <div class="select">
       <span class="arr"></span>
       <select id="changestyle">
         <option value="0">Top 100 des régions par nombre des victimes</option>
-        <option value="1">Morts prématurées par région (approximées)</option>
-        <option value="2">Excès de pollution du dièsel par région</option>
+        <option value="1">Morts prématurées par région (approximatives)</option>
+        <option value="2">Excès de pollution du diesel par région</option>
         <option value="3">Population par région</option>
       </select>
     </div>
@@ -62,11 +64,12 @@
         en partenariat avec : <a target="_blank" href="https://www.europeandatajournalism.eu/"> European Data Journalism Network</a>
       </div>
       <div>
-        Carte développée par  <a target="_blank" href="https://gis3w.it/"> Gis3W</a>
+        Carte développée par <a target="_blank" href="https://gis3w.it/"> Gis3W</a>
       </div>
       <div>
-        Source des données : <a target="_blank" href="http://www.iiasa.ac.at/web/home/about/news/170918-diesel-nox.html"> IIASA and MetNorway</a>     </div>
+        Source des données : <a target="_blank" href="http://www.iiasa.ac.at/web/home/about/news/170918-diesel-nox.html"> IIASA and MetNorway</a>
       </div>
+    </div>
   </div>
   <div id="popup" class="ol-popup">
     <a href="#" id="popup-closer" class="ol-popup-closer"></a>
@@ -81,21 +84,22 @@
   <script src="./src/js/layers.js"></script>
   <script src="./src/js/map.js"></script>
   <script>
-    var mapTitles = [
-      "Extra PM 2.5 concentration from excess diesel NOx emissions - NB",
-      "Extra PM 2.5 concentration from excess diesel NOx emissions",
-      "Approximate premature deaths dues to excess diesel Nox emissions - NB",
-      "Approximate premature deaths dues to excess diesel Nox emissions",
-      "Popolation"
-    ];
-    $('#changestyle').change(function() {
-      var value = $(this).find(":selected").val();
-      change_reticolo_style(value);
-      createLegend(value);
-      overlay.setPosition(undefined);
-      closer.blur();
-    });
-    createLegend(0);
+  var mapTitles = [
+    "Extra PM 2.5 concentration from excess diesel NOx emissions - NB",
+    "Extra PM 2.5 concentration from excess diesel NOx emissions",
+    "Approximate premature deaths dues to excess diesel Nox emissions - NB",
+    "Approximate premature deaths dues to excess diesel Nox emissions",
+    "Popolation"
+  ];
+  $('#changestyle').change(function() {
+    var value = $(this).find(":selected").val();
+    change_reticolo_style(value);
+    createLegend(value);
+    overlay.setPosition(undefined);
+    closer.blur();
+  });
+  createLegend(0);
   </script>
 </body>
+
 </html>
